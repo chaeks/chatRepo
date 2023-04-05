@@ -1,5 +1,6 @@
 let msg = "Hello !!";
 const PI = 3.14;
+console.log('main');
 function addNumber(a,b){
     return a+b;
 }
