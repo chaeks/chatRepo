@@ -587,9 +587,11 @@ var initESW = function(gslbBaseURL) {
             
         });
         embedded_svc.addEventHandler("onChatEstablished", function(data) {
+		console.log("establlished");
             //Dont remove below 2 lines, this provided by SF team
             const varStyle=document.getElementsByClassName("minimizedText");
             varStyle[0].style.display='block';
+		
         });
         embedded_svc.addEventHandler("onChatTransferSuccessful", function(data) {
             
@@ -608,6 +610,7 @@ var initESW = function(gslbBaseURL) {
         });
         //EMC-76 End
         embedded_svc.addEventHandler("onAgentMessage", function(data) {
+		console.log("onAgentMessage");
             //Dont remove below 2 lines, this provided by SF team
             const varStyle=document.getElementsByClassName("minimizedText");
             varStyle[0].style.display='block';
