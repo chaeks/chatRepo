@@ -240,8 +240,7 @@
         <!-- Please avoid to make any changes in the below lines of code -->
     
         var LeadRecordTypeId = '0123Z000000umqJQAQ';
-        var ChatRequestRecordTypeId = '012Di000000CDZEIA4';
-            
+var ChatRequestRecordTypeId = '012Dz0000007cdfIAA';
             embedded_svc.settings.extraPrechatFormDetails = [
                 { "label": "fiatstoreURL",               "value": fiatstoreURL,                   "displayToAgent": false},
                 { "label": "fiatstoreBrand",     "value": fiatstoreBrand,                 "displayToAgent": false},          
@@ -669,25 +668,25 @@
             });
 
             embedded_svc.init(
-			'https://fcagroup--uat.sandbox.my.salesforce.com',
-			'https://fcagroup--uat.sandbox.my.salesforce-sites.com/Tier1ExternalSite',
-			gslbBaseURL,
-			'00DDi000000FFNg',
-			'Fiatstore_Marketplace',
-			{
-				baseLiveAgentContentURL: 'https://c.la2-c1cs-ia7.salesforceliveagent.com/content',
-				deploymentId: '572Di0000004E5b',
-				buttonId: '573Di0000004EwA',
-				baseLiveAgentURL: 'https://d.la2-c1cs-ia7.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IDi0000004CcoMAE_18afa6bfffb',
-				isOfflineSupportEnabled: false
-			}
-		);
+    'https://fcagroup--mktplace.sandbox.my.salesforce.com',
+    'https://fcagroup--mktplace.sandbox.my.salesforce-sites.com/Tier1ExternalSite',
+    gslbBaseURL,
+    '00DDz000001qbuj',
+    'Fiatstore_Marketplace', {
+        baseLiveAgentContentURL: 'https://c.la3-c1cs-ia7.salesforceliveagent.com/content',
+        deploymentId: '572Dz00000000sT',
+        buttonId: '573Dz0000000arH',
+        baseLiveAgentURL: 'https://d.la3-c1cs-ia7.salesforceliveagent.com/chat',
+        eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IDz0000004CVsMAM_18a898768e6',
+        isOfflineSupportEnabled: false
+    }
+);
+
     
     };
     if (!window.embedded_svc) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://fcagroup--uat.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.setAttribute('src', 'https://fcagroup--mktplace.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
