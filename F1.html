@@ -9,6 +9,7 @@
     var minimizeFlag = false;  //To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days
     var hashEmail = '';  
     var visitorMessageCount = false;
+	var chatEstablished =false;
     
     </script>
     <style type='text/css'>
@@ -600,6 +601,8 @@
                 //Dont remove below 2 lines, this provided by SF team
                 const varStyle=document.getElementsByClassName("minimizedText");
                 varStyle[0].style.display='block';
+		    chatEstablished = true;
+		    alert(chatEstablished);
             });
             embedded_svc.addEventHandler("onChatTransferSuccessful", function(data) {
                 
@@ -642,7 +645,10 @@
                 document.querySelector('.wave').style = "display:none;";
                 minimizeFlag = true;
                 //To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days End
-                
+                 if (chatEstablished){
+			 const varStyle=document.getElementsByClassName("minimizedText");
+                varStyle[0].style.display='block';
+		 }
             });
             embedded_svc.addEventHandler("afterMaximize", function(data) {
                 //isSFChatInit    = 'Y';
