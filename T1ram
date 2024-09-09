@@ -713,14 +713,13 @@ window.addEventListener("message", function(event) {
 	<a href = "C2.html">C2 page </a>
 	<a href = "C3.html">C3 page </a>
 		
-    <div class = "icon-bar" >
-            <img id="IconImage" src="" 
-                 onclick="bootstrapChat()" class="circle" style="display:none;" title="" />  <!--style="display:none;" added To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days -->
-
-            <div class="wave" style="display:none;"></div>  <!--To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days -->
+    <div class="icon-bar">
+        <img alt="ChatIcon" class="circle" id="IconImage" onclick="bootstrapChat()" style="display:none;" />  
+        
+        <div class="wave" style="display:none;"></div>  
     </div>
 
-    <script type='text/javascript'>
+    <script type="text/javascript">
         //To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days Start
         function agentOffline(){
             if (!minimizeFlag){  //Because on fast minimize giving wrong UI
@@ -738,10 +737,10 @@ window.addEventListener("message", function(event) {
         //To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days End
         //EMC-54 Start
         function bootstrapChat() {
-        embedded_svc.bootstrapEmbeddedService();
+            embedded_svc.bootstrapEmbeddedService();
         }
         //EMC-54 end
-    
+        
         //To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days Start
         //NOTE :  holidayList in "DD/MM" format (Christmas, New Year, Thanks Giving-Evaluated using thanksGivingDate method)
         const holidayList = ["25/12", "01/01"];
@@ -767,14 +766,14 @@ window.addEventListener("message", function(event) {
             
             //weekday  0==Sunday 1==Monday 2==Tuesday 3==Wednesday 4==Thurs 5==Friday 6==Sat
             var dayOfWeek = estDate.getDay();   
-            let mm = estDate.getMonth() + 1;   
+            let mm = estDate.getMonth() + 1; 
             if (mm%10 == mm ){
                 mm = '0'+mm;
-            }
-            let dd = estDate.getDate();   
+            }  
+            let dd = estDate.getDate();  
             if (dd%10 == dd ){
                 dd = '0'+dd;
-            } 
+            }  
             const currentDate = dd + '/' + mm;
             thanksGivingDate(estDate.getFullYear());
             
@@ -790,10 +789,10 @@ window.addEventListener("message", function(event) {
         }
         getHolidayList();    //To Show Chat icon on page load
         //To show the Online/Offline Chat Icon on the basis of HolidayList, Working Hours and Working Days End
-    </script>
+        </script>  
     
 	<script type='text/javascript'>
-        document.querySelector('#IconImage').src = "https://fcagroup--eshop.sandbox.my.salesforce-sites.com/Tier1ExternalSite/resource/1690889916000/Tier1ChatIcon";
+        document.querySelector('#IconImage').src = "https://fcagroup--mktplace.sandbox.my.salesforce-sites.com/Tier1ExternalSite/resource/1690889916000/Tier1ChatIcon";
         document.querySelector('#IconImage').title = "Chat With "+ tierOneBrand;
 	</script>
 </body>
