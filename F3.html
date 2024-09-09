@@ -603,26 +603,6 @@ var ChatRequestRecordTypeId = '012Dz0000007cdfIAA';
             embedded_svc.addEventHandler("onChatTransferSuccessful", function(data) {
                 
             });
-            embedded_svc.addEventHandler("onChatEndedByChasitor", function(data) {
-                
-                
-                if (!visitorMessageCount){
-                    
-                }else{
-                    
-                }
-                
-                
-            });
-            embedded_svc.addEventHandler("onChatEndedByAgent", function(data) {
-                
-            });
-           
-            embedded_svc.addEventHandler("onChasitorMessage", function(data) {
-                if (!visitorMessageCount){
-                    visitorMessageCount = true; 
-                }
-            });
             
             embedded_svc.addEventHandler("onAgentMessage", function(data) {
                 //Dont remove below 2 lines, this provided by SF team
