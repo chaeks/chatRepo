@@ -667,6 +667,23 @@ var ChatRequestRecordTypeId = '012Dz0000007cdfIAA';
         
             });
 
+	    embedded_svc.addEventHandler("onChasitorMessage", function(data) {
+                    
+                    console.log('Message : '+data);
+                    console.log('Message Stringify : '+ JSON.stringify(data) );
+                    
+                    if (!visitorMessageCount){
+                        visitorMessageCount = true; 
+                        const chasitorMessageList = document.getElementsByClassName('plaintextContent chasitor');
+                        console.log('chasitorMessageList =='+chasitorMessageList+'type= ='+typeof chasitorMessageList);
+                        console.log('chasitorMessageList[0] =='+chasitorMessageList[0]+'type= ='+typeof chasitorMessageList[0]);
+                        console.log('chasitorMessageList[0].textContent =='+chasitorMessageList[0].textContent+'type= ='+typeof chasitorMessageList[0].textContent);
+                        if (chasitorMessageList[0].textContent === 'Request a Callback'){
+                            console.log('RequestForCallback event');
+                        }
+                    }
+                });
+
             embedded_svc.init(
     'https://fcagroup--mktplace.sandbox.my.salesforce.com',
     'https://fcagroup--mktplace.sandbox.my.salesforce-sites.com/Tier1ExternalSite',
