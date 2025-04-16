@@ -191,7 +191,7 @@
                 if(e.type !== undefined) event.type = e.type;
                 if(e.category !== undefined) event.category = e.category;
                 if(e.attributes !== undefined) event.attributes = e.attributes;
-                //console.log('window.digitalData.newEvent value check',e);
+                console.log('window.digitalData.newEvent value check',e);
             }
             // event array is updated and a window.trigger is fired at this point to alert the browser that a new event has occurred.
             window.digitalData.events.push(event);
@@ -205,7 +205,7 @@
         };
         
         window.addEventListener('onEmbeddedMessagingButtonClicked', function(e){
-            //console.log("onEmbeddedMessagingButtonClicked",e);
+            console.log("onEmbeddedMessagingButtonClicked",e);
             window.digitalData.newEvent({
                 type: "CustomTagEvent",
                 eventName: "generalCTA",
@@ -219,7 +219,7 @@
         
         
         window.addEventListener('onEmbeddedMessagingWindowMinimized', function(e){
-            //console.log("onEmbeddedMessagingWindowMinimized");
+            console.log("onEmbeddedMessagingWindowMinimized");
             window.digitalData.newEvent({
                 type: "CustomTagEvent",
                 eventName: "generalCTA",
@@ -233,7 +233,7 @@
         
         
         window.addEventListener('onEmbeddedMessagingPreChatSubmitted', function(e){
-            //console.log("onEmbeddedMessagingPreChatSubmitted");
+            console.log("onEmbeddedMessagingPreChatSubmitted");
             window.digitalData.newEvent({
                 type: "CustomTagEvent",
                 eventName: "chat",
@@ -246,7 +246,7 @@
         
         
         window.addEventListener('onEmbeddedMessageSent', function (e) {
-            //console.log("Chat onEmbeddedMessageSent");
+            console.log("Chat onEmbeddedMessageSent");
             const payload = e?.detail?.conversationEntry?.entryPayload;
             console.log("Context paramMap", payload);
             if (payload) {
@@ -257,10 +257,10 @@
             
             if (messageType === 'StaticContentMessage' && message?.staticContent?.text) {
             messageText = message.staticContent.text;
-            //console.log("messageText  text", messageText);
+            console.log("messageText  text", messageText);
             } else if (messageType === 'ChoicesMessage' && message?.choices?.formatType === 'QuickReplies') {
             messageText = message.choices.text;
-            //console.log("messageText quick text", messageText);
+            console.log("messageText quick text", messageText);
             }
             if (messageText) {
             const invalidVIN = [
@@ -286,7 +286,7 @@
         }
         
         if (enterVIN.some(phrase => messageText.includes(phrase))) {
-            //console.log("Enter a Different VIN");
+            console.log("Enter a Different VIN");
             window.digitalData.newEvent({
                 type: "CustomTagEvent",
                 eventName: "generalCTA",
@@ -299,7 +299,7 @@
         }
         
         if (noRecall.some(phrase => messageText.includes(phrase))) {
-            //console.log("There are no open recalls associated with this VIN.");
+            console.log("There are no open recalls associated with this VIN.");
             window.digitalData.newEvent({
                 type: "CustomTagEvent",
                 eventName: "formError",
@@ -312,7 +312,7 @@
         }
         
         if (userSelectRecall.some(phrase => messageText.includes(phrase))) {
-            //console.log("User selected Recall campaign");
+            console.log("User selected Recall campaign");
             window.digitalData.newEvent({
                 type: "CustomTagEvent",
                 eventName: "generalCTA",
@@ -325,7 +325,7 @@
         }
         
         if (openRecall.some(phrase => messageText.includes(phrase))) {
-            //console.log("It appears that your vehicle is associated with the below open recall campaigns. Please select the one you want to investigate.");
+            console.log("It appears that your vehicle is associated with the below open recall campaigns. Please select the one you want to investigate.");
             window.digitalData.newEvent({
                 type: "CustomTagEvent",
                 eventName: "formCompletion",
