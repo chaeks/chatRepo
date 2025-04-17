@@ -338,7 +338,14 @@
         }
         }
         });
-        
+        const closeButton = document.querySelector(".headerButton.closeButton.slds-button.slds-button_icon slds-button_icon-bare.slds-button_icon-inverse");
+							if (closeButton) {
+								console.log('Click the close button');
+									console.log(closeButton);
+								closeButton.addEventListener("click", function(e) {
+							console.log('Click the close button', e);
+									});
+            }
             
         /*
             window.addEventListener('onEmbeddedMessagingButtonCreated', function(e){
