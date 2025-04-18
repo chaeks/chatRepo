@@ -215,6 +215,9 @@
                     linkName: "mopar:tool:recalls:chatbot:close-chat-window"
                 }
             });        
+		const frameELe = document.querySelector('#embeddedMessagingFrame');
+	var innerDoc = frameELe.contentDocument || frameELe.contentWindow.document;
+	console.log(innerDoc);
         });
         
         
@@ -346,9 +349,7 @@
 			console.log('Click the close button', e);
 		});
         }
-	const frameELe = document.querySelector('#embeddedMessagingFrame');
-	var innerDoc = frameELe.contentDocument || frameELe.contentWindow.document;
-	console.log(innerDoc);
+	
 
 		    
             
