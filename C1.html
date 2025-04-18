@@ -216,7 +216,7 @@
                 }
             });        
 		const frameELe = document.querySelector('#embeddedMessagingFrame');
-	var innerDoc = frameELe.contentDocument || frameELe.contentWindow.document;
+	var innerDoc = frameELe?.contentDocument || frameELe?.contentWindow.document;
 	console.log(innerDoc);
         });
         
