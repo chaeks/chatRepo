@@ -31,8 +31,8 @@ type: "OpenLink",
 article_id : "0000_us",
 link_id : "ka0700000",
 source: "agent-copilot"
-    }
-        console.log('payload git'+ payload);
+    };
+        console.log('payload git'+ JSON.stringify( payload));
         
       const customEvt = new CustomEvent("NonClickableLink", {details: payload });
     
