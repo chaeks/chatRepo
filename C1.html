@@ -25,13 +25,15 @@ document.addEventListener("DOMContentLoaded", function() {
     triggerButton.addEventListener('click', function() {
         // Send a message to the parent window
         var message = document.getElementById('messageInput').value;
-        
+        console.log('message git'+ message);
 const payload = {
 type: "OpenLink",
 article_id : "0000_us",
 link_id : "ka0700000",
 source: "agent-copilot"
     }
+        console.log('payload git'+ payload);
+        
       const customEvt = new CustomEvent("NonClickableLink", {details: payload });
     
         console.log('index.html>>> Button Clicked');
