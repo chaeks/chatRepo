@@ -25,8 +25,16 @@ document.addEventListener("DOMContentLoaded", function() {
     triggerButton.addEventListener('click', function() {
         // Send a message to the parent window
         var message = document.getElementById('messageInput').value;
+        
+const message1 = {
+type: "OpenLink,
+article_id : "0000_us",
+link_id : "ka0700000",
+source: "agent-copilot"
+    }
         console.log('index.html>>> Button Clicked');
         window.parent.postMessage(message, '*');
+        window.parent.postMessage(message1, '*');
     });
 });
 </script>
