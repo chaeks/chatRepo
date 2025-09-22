@@ -38,7 +38,9 @@ source: "agent-copilot"
     
         console.log('index.html>>> Button Clicked');
         window.parent.postMessage(message, '*');
-        window.parent.postMessage(customEvt, '*');
+        document.dispatchEvent(customEvt);
+        
+       // window.parent.postMessage(customEvt, '*');
     });
 });
 </script>
