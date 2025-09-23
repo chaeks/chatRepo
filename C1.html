@@ -38,10 +38,10 @@ source: "agent-copilot"
     const customEvt = {type: 'NonClickableLink' , payload : payload1 };
         console.log(customEvt);
         
-        window.parent.postMessage(customEvt, '*');
+        window.postMessage(customEvt, '*');
         
         console.log('index.html>>> Button Clicked');
-        window.parent.postMessage(message, '*');
+        window.postMessage(message, '*');
         //document.dispatchEvent(customEvt);
         
        // window.parent.postMessage(customEvt, '*');
