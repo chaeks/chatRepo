@@ -18,6 +18,13 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
+    const payload1 = {
+         type: "OpenLink",
+         article_id : "0000_us",
+         link_id : "ka0700000",
+         source: "agent-copilot"
+         };
+    
     // Find the button element
     var triggerButton = document.getElementById('triggerButton');
 
@@ -26,19 +33,15 @@ document.addEventListener("DOMContentLoaded", function() {
         // Send a message to the parent window
         var message = document.getElementById('messageInput').value;
         console.log('message git'+ message);
-        const payload1 = {
-         type: "OpenLink",
-         article_id : "0000_us",
-         link_id : "ka0700000",
-         source: "agent-copilot"
-         };
+        
+        
         console.log('payload git'+ JSON.stringify( payload1));
         
         //const customEvt = new CustomEvent("NonClickableLink", {details: payload });
-        const customEvt = {type: 'NonClickableLink' , payload : payload1 };
-        console.log(customEvt);
+       //  const customEvt = {type: 'NonClickableLink' , payload : payload1 };
+      //  console.log(customEvt);
         
-        window.postMessage(customEvt, '*');
+        window.postMessage(payload1, '*');
         
         console.log('index.html>>> Button Clicked');
         window.postMessage(message, '*');
