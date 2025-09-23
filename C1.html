@@ -19,10 +19,10 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const payload1 = {
-         type: "OpenLink",
-         article_id : "0000_us",
-         link_id : "ka0700000",
-         source: "agent-copilot"
+         type: 'OpenLink',
+         article_id : '0000_us',
+         link_id : 'ka0700000',
+         source: 'agent-copilot'
          };
     
     // Find the button element
@@ -41,10 +41,10 @@ document.addEventListener("DOMContentLoaded", function() {
        //  const customEvt = {type: 'NonClickableLink' , payload : payload1 };
       //  console.log(customEvt);
         
-        window.postMessage(payload1, '*');
+        window.parent.postMessage(payload1, '*');
         
         console.log('index.html>>> Button Clicked');
-        window.postMessage(message, '*');
+        window.parent.postMessage(message, '*');
         //document.dispatchEvent(customEvt);
         
        // window.parent.postMessage(customEvt, '*');
