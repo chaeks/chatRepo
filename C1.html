@@ -36,7 +36,9 @@ source: "agent-copilot"
         
       //const customEvt = new CustomEvent("NonClickableLink", {details: payload });
     const customEvt = {type: 'NonClickableLink' , payload : payload1 };
-        window.parent.postMessage(customEvt);
+        console.log(customEvt);
+        
+        window.parent.postMessage(customEvt, '*');
         
         console.log('index.html>>> Button Clicked');
         window.parent.postMessage(message, '*');
